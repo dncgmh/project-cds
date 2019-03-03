@@ -1,0 +1,85 @@
+body,
+html {
+  height: 100%;
+}
+
+.vl {
+  border-left: 1px solid white;
+  height: 12px;
+  padding-left: 10px;
+  padding-right: 6px;
+}
+
+hr {
+  display: block;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-style: inherit;
+  border-width: 1px;
+  border-top: 1px solid gray;
+}
+
+label {
+  font-size: 13px;
+}
+
+body {
+  background-image: url(./banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: auto;
+}
+
+.my-active {
+  background-color: #cfcdcf;
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: #cfcdcf;
+  color: black;
+}
+
+.cs-td {
+  height: 20px;
+  word-break: break-word;
+}
+
+.btn38 {
+  height: 38px;
+  width: 38px;
+  color: #343a40;
+}
+
+.cs-img {
+  height: 100px;
+  width: auto;
+  object-fit: cover;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 13%;
+  right: 1%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Style the icon bar links */
+.icon-bar button {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.facebook {
+  background: #3b5998;
+  color: white;
+}
