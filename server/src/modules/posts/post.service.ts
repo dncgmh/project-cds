@@ -18,5 +18,11 @@ export default {
       'userId',
       'id'
     );
+  },
+  async findApprovedPost(): Promise<IPost[]> {
+    return await PostModel.find({ state: State.approved }).populate('userId', [
+      'firstName',
+      'lastName'
+    ]);
   }
 };

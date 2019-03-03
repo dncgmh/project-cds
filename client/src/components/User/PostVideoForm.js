@@ -19,7 +19,15 @@ class PostVideoForm extends Component {
     this.onChoose = this.onChoose.bind(this);
     this.onPaste = this.onPaste.bind(this);
   }
-
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.user.message)
+      this.state = {
+        link: '',
+        subject: '',
+        genre: 'music',
+        description: ''
+      };
+  }
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }

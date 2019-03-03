@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import RegisterForm from '../User/RegisterForm';
 import { Redirect } from 'react-router-dom';
 import Facebook from '../commons/Facebook';
+import Posts from '../post/Posts';
 
 export class Home extends Component {
   constructor() {
@@ -23,7 +24,7 @@ export class Home extends Component {
     const { isAuthenticated } = this.props.user;
     return (
       <div className='container-fluid pt-4'>
-        {!isAuthenticated && <RegisterForm />}
+        {!isAuthenticated ? <RegisterForm /> : <Posts />}
         <Facebook />
       </div>
     );

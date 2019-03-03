@@ -11,6 +11,9 @@ export const UPLOAD_CERT = 'UPLOAD_CERT';
 export const POST_VIDEO = 'POST_VIDEO';
 export const GET_POSTS = 'GET_POSTS';
 
+//Post
+export const GET_POSTS_HM = 'GET_POSTS_HM';
+
 //Admin
 export const GET_POSTS_AD = 'GET_POSTS_AD';
 export const APPROVE_POST_AD = 'APPROVE_POST_AD';

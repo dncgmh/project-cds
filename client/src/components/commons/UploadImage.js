@@ -12,7 +12,7 @@ const UploadImage = ({ name, value, error, onChange, onBlur }) => {
         name={name}
         accept='image/*'
       />
-      <label className='custom-file-label' htmlFor='customFile'>
+      <label className='custom-file-label text-truncate' htmlFor='customFile'>
         {(value && value.name) || 'Choose file'}
       </label>
     </div>

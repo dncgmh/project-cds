@@ -5,6 +5,7 @@ import { CreatePostDto } from './create-post.dto';
 import { jwtAuth } from '../auth/auth.middleware';
 const router = express.Router();
 
+router.get('/', postController.getApprovedPost);
 router.post(
   '/post',
   jwtAuth,

@@ -24,11 +24,8 @@ label {
 }
 
 body {
-  background-image: url(./banner.jpg);
+  background: url(./banner.jpg) no-repeat center center fixed;
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: auto;
 }
 
 .my-active {

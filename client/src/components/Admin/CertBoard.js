@@ -20,39 +20,43 @@ class CertBoard extends Component {
     let content;
     if (certs.length) {
       content = certs.map((cert, id) => {
-        return (
-          <tr key={id}>
-            <td className='cs-td'>{cert._id}</td>
-            <td className='cs-td'>
-              <img className='cs-img' src={`/${cert.image.selfie}`} />
-            </td>
-            <td className='cs-td'>
-              <img
-                className='cs-img'
-                src={`/${cert.image.frontIdentityCard}`}
-              />
-            </td>
-            <td className='cs-td'>
-              <img className='cs-img' src={`/${cert.image.backIdentityCard}`} />
-            </td>
-            <td className='cs-td'>
-              <button
-                type='button'
-                className='btn btn-outline-success btn38 text-dark'
-                onClick={() => this.onApprove(cert._id, 'approved')}
-              >
-                <i className='fas fa-check' />
-              </button>
-              <button
-                type='button'
-                className='btn btn-outline-warning btn38 text-danger'
-                onClick={() => this.onApprove(cert._id, 'rejected')}
-              >
-                <i className='fas fa-times' />
-              </button>
-            </td>
-          </tr>
-        );
+        if (cert.image)
+          return (
+            <tr key={id}>
+              <td className='cs-td'>{cert._id}</td>
+              <td className='cs-td'>
+                <img className='cs-img' src={`/${cert.image.selfie}`} />
+              </td>
+              <td className='cs-td'>
+                <img
+                  className='cs-img'
+                  src={`/${cert.image.frontIdentityCard}`}
+                />
+              </td>
+              <td className='cs-td'>
+                <img
+                  className='cs-img'
+                  src={`/${cert.image.backIdentityCard}`}
+                />
+              </td>
+              <td className='cs-td'>
+                <button
+                  type='button'
+                  className='btn btn-outline-success btn38 text-dark'
+                  onClick={() => this.onApprove(cert._id, 'approved')}
+                >
+                  <i className='fas fa-check' />
+                </button>
+                <button
+                  type='button'
+                  className='btn btn-outline-warning btn38 text-danger'
+                  onClick={() => this.onApprove(cert._id, 'rejected')}
+                >
+                  <i className='fas fa-times' />
+                </button>
+              </td>
+            </tr>
+          );
       });
     }
     return (

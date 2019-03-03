@@ -15,7 +15,18 @@ export default {
           statusCode: 201,
           message: 'You have successfully posted.',
           data: { post }
-        });
+        }).json(res);
+    } catch (error) {
+      next(error);
+    }
+  },
+  async getApprovedPost(req, res, next) {
+    try {
+      const posts = await postService.findApprovedPost();
+      return new BaseResponse({
+        statusCode: 200,
+        data: { posts }
+      }).json(res);
     } catch (error) {
       next(error);
     }
