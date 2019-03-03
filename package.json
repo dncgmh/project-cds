@@ -7,7 +7,7 @@
   "scripts": {
     "install": "cd server && npm run install",
     "build": "cd server && npm run build",
-    "start": "cd cerver && npm run start"
+    "start": "cd cerver && npm run start",
     "predeploy": "cd client && npm run build",
     "deploy": "gh-pages -d client/build"
   },
