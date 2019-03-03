@@ -1,9 +1,6 @@
-import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import setAuthToken from './setAuthToken';
 import { logout, getCurrentUser } from '../components/User/user.action';
-
-axios.defaults.baseURL = 'https://project-cds.herokuapp.com/';
 
 const getAuth = store => {
   if (localStorage.jwtToken) {
