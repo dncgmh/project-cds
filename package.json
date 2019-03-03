@@ -5,8 +5,9 @@
   "main": "index.js",
   "homepage": "https://dncgmh.github.io/project-cds",
   "scripts": {
-    "install": "cd server && npm install",
+    "install": "cd client && npm install && cd ../server && npm install",
     "postinstall": "cd server && npm run build",
+    "poststart": "cd client && npm run build",
     "start": "cd server && npm run prod",
     "predeploy": "cd client && npm run build",
     "deploy": "gh-pages -d client/build"

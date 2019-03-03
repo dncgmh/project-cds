@@ -12,7 +12,6 @@ import {
 } from '../../constants';
 import setAuthToken from '../../helpers/setAuthToken';
 import { toast } from 'react-toastify';
-axios.defaults.baseURL = 'http://3.1.213.215:5000/';
 
 export const login = ({ email, password }) => dispatch => {
   axios
