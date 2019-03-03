@@ -5,7 +5,7 @@
   "main": "index.js",
   "homepage": "https://dncgmh.github.io/project-cds",
   "scripts": {
-    "install": "cd server && npm run install",
+    "install": "cd server && npm install",
     "build": "cd server && npm run build",
     "start": "cd cerver && npm run start",
     "predeploy": "cd client && npm run build",
