@@ -4,23 +4,23 @@ self.__precacheManifest = [
     "url": "/project-cds/static/js/runtime~main.dd432f7d.js"
   },
   {
-    "revision": "61624c9be41e3c2779f2",
-    "url": "/project-cds/static/js/main.61624c9b.chunk.js"
+    "revision": "bf21c515ed47df9de4f6",
+    "url": "/project-cds/static/js/main.bf21c515.chunk.js"
   },
   {
     "revision": "d5846844e4ef858e214d",
     "url": "/project-cds/static/js/2.d5846844.chunk.js"
   },
   {
-    "revision": "61624c9be41e3c2779f2",
-    "url": "/project-cds/static/css/main.a745bf15.chunk.css"
+    "revision": "bf21c515ed47df9de4f6",
+    "url": "/project-cds/static/css/main.8f3724e5.chunk.css"
   },
   {
     "revision": "d5846844e4ef858e214d",
     "url": "/project-cds/static/css/2.8ccb98be.chunk.css"
   },
   {
-    "revision": "c8503be37765ac0081dc027cef29f39f",
+    "revision": "bcb15b6ffb4146efd79313d8962abd75",
     "url": "/project-cds/index.html"
   }
 ];
