@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
-
+console.log(process.env.PWD);
 import * as express from 'express';
 import databaseService from './modules/database/database.service';
 import customLogger from './utils/customLogger';
