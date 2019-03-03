@@ -6,8 +6,7 @@
   "homepage": "https://dncgmh.github.io/project-cds",
   "scripts": {
     "install": "cd server && npm install",
-    "tsc": "tsc",
-    "postinstall": "cd server && npm run tsc",
+    "postinstall": "cd server && npm run build",
     "start": "cd server && npm run prod",
     "predeploy": "cd client && npm run build",
     "deploy": "gh-pages -d client/build"
