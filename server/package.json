@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon",
     "tsc": "tsc",
-    "build": "rimraf dist && npm run tsc",
+    "build": "npm run tsc",
     "prod": "node -r tsconfig-paths/register dist/main.js"
   },
   "repository": {
