@@ -5,8 +5,7 @@
   "rootDir": "./src",
   "scripts": {
     "start": "nodemon",
-    "tsc": "tsc",
-    "build": "npm run tsc",
+    "build": "npm install typescript && tsc",
     "prod": "node -r tsconfig-paths/register dist/main.js"
   },
   "repository": {
