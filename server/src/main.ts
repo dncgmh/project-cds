@@ -30,7 +30,7 @@ app.use('/api', router);
 app.use('/uploads', express.static(path.join(process.env.PWD, 'uploads')));
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(process.env.PWD, 'client/build')));
+  app.use(express.static(path.join(process.env.PWD, '..', 'client/build')));
   app.get('*', function(req, res) {
     res.sendFile(
       path.join(process.env.PWD, '..', 'client/build', 'index.html')
