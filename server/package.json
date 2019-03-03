@@ -5,7 +5,8 @@
   "rootDir": "./src",
   "scripts": {
     "start": "nodemon",
-    "build": "rimraf dist && tsc -p tsconfig.build.json",
+    "tsc": "tsc -p tsconfig.build.json",
+    "build": "rimraf dist && npm run tsc",
     "prod": "node -r tsconfig-paths/register dist/main.js"
   },
   "repository": {
