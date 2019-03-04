@@ -5,7 +5,9 @@ import axios from 'axios';
 
 export default {
   async createOne(createPostDto: CreatePostDto): Promise<IPost> {
-    console.log(createPostDto);
+    createPostDto.link = createPostDto.link
+      .replace('watch?v=', 'embed/')
+      .replace(/&.*/, '');
     return await new PostModel(createPostDto).save();
   },
   async findByUserId(userId): Promise<IPost[]> {
