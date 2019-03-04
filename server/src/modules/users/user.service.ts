@@ -23,9 +23,12 @@ export default {
   },
   async createOne(CreateUserDto: CreateUserDto) {
     {
-      const newUser = await new UserModel(CreateUserDto).save();
-      if (newUser) return newUser;
-      throw new BaseError({ statusCode: 400, error: 'New user is invalid' });
+      try {
+        const newUser = await new UserModel(CreateUserDto).save();
+        if (newUser) return newUser;
+      } catch (error) {
+        throw new BaseError({ statusCode: 400, error: 'New user is invalid' });
+      }
     }
   },
   async saveImageCert(user: IUser, files): Promise<IUser> {
