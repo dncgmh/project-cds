@@ -33,6 +33,7 @@ export interface IUserDocument extends Document {
   firstName: string;
   lastName: string;
   email: string;
+  emailToken: string;
   age?: number;
   password: string;
   isVerified: boolean;

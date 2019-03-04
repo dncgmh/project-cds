@@ -6,6 +6,7 @@ import { jwtAuth } from '../auth/auth.middleware';
 const router = express.Router();
 
 router.get('/', postController.getApprovedPost);
+router.get('/:postId', postController.getPost);
 router.post(
   '/post',
   jwtAuth,

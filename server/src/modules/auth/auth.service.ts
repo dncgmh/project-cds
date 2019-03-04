@@ -10,10 +10,19 @@ export default {
         .unix(),
       iat: moment().unix()
     };
-    const accessToken = 'jwt ' + jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
+    const accessToken =
+      'jwt ' + jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
     return {
       expiresIn: 3600,
       accessToken
+    };
+  },
+  createEmailOptions({ user, host }) {
+    return {
+      token: user.emailToken,
+      name: user.firstName + ' ' + user.lastName,
+      email: user.email,
+      host
     };
   }
 };

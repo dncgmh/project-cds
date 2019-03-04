@@ -59,11 +59,9 @@ class LoginForm extends Component {
           </button>
         </div>
         <div className='form-group pt-1 pl-2'>
-          <a href>
-            <small id='emailHelp' style={{ color: 'black' }}>
-              Forgot password?
-            </small>
-          </a>
+          <small id='emailHelp' style={{ color: 'black' }}>
+            Forgot password?
+          </small>
         </div>
       </form>
     );

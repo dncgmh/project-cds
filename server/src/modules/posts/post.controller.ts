@@ -30,5 +30,16 @@ export default {
     } catch (error) {
       next(error);
     }
+  },
+  async getPost(req, res, next) {
+    try {
+      const post = await postService.findById(req.params.postId);
+      return new BaseResponse({
+        statusCode: 200,
+        data: { post }
+      }).json(res);
+    } catch (error) {
+      next(error);
+    }
   }
 };

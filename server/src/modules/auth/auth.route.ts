@@ -21,4 +21,6 @@ router.post(
   authController.register
 );
 
+router.get('/verify/:token', authController.verifyEmail);
+
 export { router as authRouter };

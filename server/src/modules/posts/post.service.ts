@@ -1,6 +1,7 @@
 import { CreatePostDto } from './create-post.dto';
 import PostModel, { IPost } from './post.model';
 import { State } from '../users/user.interface';
+import axios from 'axios';
 
 export default {
   async createOne(createPostDto: CreatePostDto): Promise<IPost> {

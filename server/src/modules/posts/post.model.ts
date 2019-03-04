@@ -29,6 +29,9 @@ const PostSchema = new Schema(
       type: String,
       required: true
     },
+    picture: {
+      type: String
+    },
     state: {
       type: String,
       enum: ['approved', 'pending', 'rejected'],

@@ -65,5 +65,8 @@ export default {
         password: crypto.randomBytes(60).toString('hex'),
         facebook: { id, email, name }
       }).save();
+  },
+  async findByEmailToken({ emailToken }) {
+    return await UserModel.findOne({ emailToken });
   }
 };

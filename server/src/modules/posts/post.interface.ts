@@ -14,5 +14,6 @@ export interface IPostDocument extends Document {
   readonly subject: string;
   readonly genre: Genre;
   readonly description: string;
+  picture?: string;
   state: State;
 }

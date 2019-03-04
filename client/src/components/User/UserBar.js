@@ -40,15 +40,15 @@ class UserBar extends Component {
               <span className='sr-only'>Toggle Dropdown</span>
             </button>
             <div className='dropdown-menu'>
-              <Link to='/my-certificate' class='dropdown-item'>
+              <Link to='/my-certificate' className='dropdown-item'>
                 My certifacte
               </Link>
-              <Link to='/my-post' class='dropdown-item'>
+              <Link to='/my-post' className='dropdown-item'>
                 My post
               </Link>
               <Link
                 to='/'
-                class='dropdown-item'
+                className='dropdown-item'
                 onClick={this.onLogout.bind(this)}
               >
                 Logout

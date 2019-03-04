@@ -1,6 +1,7 @@
 import { Schema, Model, model } from 'mongoose';
 import * as bcrypt from 'bcryptjs';
 import { IUserDocument } from './user.interface';
+import * as crypto from 'crypto';
 
 export interface IUser extends IUserDocument {
   comparePassword(password: string): boolean;
@@ -20,6 +21,9 @@ const UserSchema = new Schema(
     isVerified: {
       type: Boolean,
       default: false
+    },
+    emailToken: {
+      type: String
     },
     password: {
       type: String,
@@ -65,6 +69,9 @@ const UserSchema = new Schema(
 
 UserSchema.pre<IUser>('save', async function(next): Promise<void> {
   const user = this;
+  if (this.isNew) {
+    user.emailToken = crypto.randomBytes(16).toString('hex');
+  }
   if (this.isModified('password') || this.isNew) {
     const hash = await user.schema.methods.generateHash(this.password);
     user.password = hash;

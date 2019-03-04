@@ -13,6 +13,7 @@ export const GET_POSTS = 'GET_POSTS';
 
 //Post
 export const GET_POSTS_HM = 'GET_POSTS_HM';
+export const GET_POST_DETAIL = 'GET_POST_DETAIL';
 
 //Admin
 export const GET_POSTS_AD = 'GET_POSTS_AD';

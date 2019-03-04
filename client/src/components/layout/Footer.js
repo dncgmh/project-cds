@@ -8,7 +8,6 @@ export default function Footer() {
         backgroundColor: '#434649',
         color: 'white',
         position: 'fixed',
-        left: 0,
         bottom: 0,
         width: '100%'
       }}
@@ -16,27 +15,13 @@ export default function Footer() {
       <small
         style={{ paddingLeft: '8%', fontSize: '12px', fontWeight: 'bold' }}
       >
-        <a className='text-white pr-3' href>
-          User Agreement
-        </a>
-        <a className='text-white pr-3' href>
-          Privacy Policy
-        </a>
-        <a className='text-white pr-3' href>
-          Community Guidelines
-        </a>
-        <a className='text-white pr-3' href>
-          Cookie Policy
-        </a>
-        <a className='text-white pr-3' href>
-          Copyright Policy
-        </a>
-        <a className='text-white pr-3' href>
-          Guest Controls
-        </a>
-        <a className='text-white pr-3' href>
-          Language
-        </a>
+        <a className='text-white pr-3'>User Agreement</a>
+        <a className='text-white pr-3'>Privacy Policy</a>
+        <a className='text-white pr-3'>Community Guidelines</a>
+        <a className='text-white pr-3'>Cookie Policy</a>
+        <a className='text-white pr-3'>Copyright Policy</a>
+        <a className='text-white pr-3'>Guest Controls</a>
+        <a className='text-white pr-3'>Language</a>
       </small>
     </div>
   );

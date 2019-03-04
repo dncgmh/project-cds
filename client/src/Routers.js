@@ -17,6 +17,7 @@ import MyPost from './components/User/MyPost';
 import SidebarAdmin from './components/Admin/SidebarAdmin';
 import PostBoard from './components/Admin/PostBoard';
 import CertBoard from './components/Admin/CertBoard';
+import PostDetail from './components/post/PostDetail';
 
 export default () => (
   <Router>
@@ -35,6 +36,7 @@ export default () => (
             <PrivateRoute exact path='/my-post' component={MyPost} />
             <PrivateRoute exact path='/add-post' component={PostVideoForm} />
             <PrivateRoute path='/admin' component={SidebarAdmin} />
+            <Route exact path='/posts/:id' component={PostDetail} />
           </Switch>
           <Switch>
             <PrivateRoute exact path='/admin/posts' component={PostBoard} />

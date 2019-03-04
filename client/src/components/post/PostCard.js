@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Moment from '../commons/Moment';
-import fallback from './fallback.svg';
+import { Link } from 'react-router-dom';
 
 function PostCard({ post }) {
   return (
-    <div className='card mb-5 mx-1 shadow-lg bg-white rounded grow col-4'>
-      <img className='card-img-top image_event' src={fallback} height='150px' />
-      <div className='card-body py-2 px-0'>
+    <div className='card mb-5 mx-1 shadow-lg bg-white rounded grow col-3'>
+      <iframe
+        className='card-img-top image_event'
+        height='150px'
+        src={post.link}
+        frameborder='0'
+        allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+        allowfullscreen
+      />
+      <Link to={`/posts/${post._id}`} className='card-body py-2 px-0'>
         <div className='card-title'>
           <h6 className='text-truncate overhidden'>{post.subject}</h6>
         </div>
@@ -25,7 +32,7 @@ function PostCard({ post }) {
             <Moment locale='en' fromNow={true} date={post.createdAt} />
           </small>
         </div>
-      </div>
+      </Link>
       <div
         className='card-footer py-1'
         style={{
