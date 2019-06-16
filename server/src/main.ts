@@ -23,7 +23,6 @@ app.use(bodyParser.json());
 
 app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
-passport.use('fb', facebookStrategy);
 
 app.use(customLogger);
 app.use('/api', router);

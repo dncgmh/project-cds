@@ -1,6 +1,6 @@
 import { Schema, Model, model } from 'mongoose';
-import * as bcrypt from 'bcryptjs';
 import { IUserDocument } from './user.interface';
+import * as bcrypt from 'bcryptjs';
 import * as crypto from 'crypto';
 
 export interface IUser extends IUserDocument {
@@ -60,6 +60,10 @@ const UserSchema = new Schema(
       type: String,
       enum: ['approved', 'pending', 'rejected'],
       default: 'pending'
+    },
+    ref: {
+      type: String,
+      index: true
     }
   },
   {
@@ -71,6 +75,7 @@ UserSchema.pre<IUser>('save', async function(next): Promise<void> {
   const user = this;
   if (this.isNew) {
     user.emailToken = crypto.randomBytes(16).toString('hex');
+    user.ref = crypto.randomBytes(10).toString('hex');
   }
   if (this.isModified('password') || this.isNew) {
     const hash = await user.schema.methods.generateHash(this.password);
@@ -89,21 +94,7 @@ UserSchema.methods = {
   },
 
   transform() {
-    const transformed = {};
-    const fields = [
-      '_id',
-      'email',
-      'role',
-      'firstName',
-      'lastName',
-      'gender',
-      'picture',
-      'isVerified',
-      'image'
-    ];
-    fields.forEach(field => {
-      transformed[field] = this[field];
-    });
+    const { password, emailToken, facebook, ...transformed } = this.toObject();
     return transformed;
   }
 };

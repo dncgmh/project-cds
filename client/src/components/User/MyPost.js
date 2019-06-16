@@ -27,52 +27,48 @@ class MyPost extends Component {
       });
     }
     return (
-      <div className='container'>
+      <div
+        className='col-md-9 card px-0'
+        style={{
+          margin: 'auto'
+        }}
+      >
         <div
-          className='card col-8 px-0'
-          style={{
-            margin: 'auto'
-          }}
+          className='card-header text-center'
+          style={{ backgroundColor: '#f6f8fa' }}
         >
-          <div
-            className='card-header text-center'
-            style={{ backgroundColor: '#f6f8fa' }}
+          <p style={{ fontSize: '21px' }}>My Post</p>
+        </div>
+        <div
+          className='card-body row mx-0 py-4'
+          style={{ backgroundColor: 'rgb(237, 240, 243)' }}
+        >
+          {posts ? (
+            <table className='table'>
+              <thead>
+                <tr>
+                  <th scope='col'>#</th>
+                  <th scope='col'>Link</th>
+                  <th scope='col'>Subject</th>
+                  <th scope='col'>Genre</th>
+                </tr>
+              </thead>
+              <tbody>{postList}</tbody>
+            </table>
+          ) : (
+            <>
+              <div className='card-body'>
+                <p className='card-text'>You have not added your certificate</p>
+              </div>
+            </>
+          )}
+          <Link
+            to='/add-post'
+            className='btn btn-primary w-100'
+            style={{ backgroundColor: '#419698' }}
           >
-            <p style={{ fontSize: '21px' }}>My Post</p>
-          </div>
-          <div
-            className='card-body row mx-0 py-4'
-            style={{ backgroundColor: 'rgb(237, 240, 243)' }}
-          >
-            {posts ? (
-              <table className='table'>
-                <thead>
-                  <tr>
-                    <th scope='col'>#</th>
-                    <th scope='col'>Link</th>
-                    <th scope='col'>Subject</th>
-                    <th scope='col'>Genre</th>
-                  </tr>
-                </thead>
-                <tbody>{postList}</tbody>
-              </table>
-            ) : (
-              <>
-                <div className='card-body'>
-                  <p className='card-text'>
-                    You have not added your certificate
-                  </p>
-                </div>
-              </>
-            )}
-            <Link
-              to='/add-post'
-              className='btn btn-primary w-100'
-              style={{ backgroundColor: '#419698' }}
-            >
-              Add More
-            </Link>
-          </div>
+            Add More
+          </Link>
         </div>
       </div>
     );

@@ -3,6 +3,7 @@ var options: mongoose.ConnectionOptions = {
   useNewUrlParser: true,
   autoIndex: true,
   useCreateIndex: true,
+  useFindAndModify: true,
   user: process.env.DB_USER,
   pass: process.env.DB_PASS
 };

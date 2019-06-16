@@ -80,3 +80,7 @@ body {
   background: #3b5998;
   color: white;
 }
+
+.dropdown-item {
+  border: none;
+}

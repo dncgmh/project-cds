@@ -4,6 +4,8 @@ import { isEmpty } from 'lodash';
 import { State } from './user.interface';
 import * as crypto from 'crypto';
 import BaseError from '../../utils/baseError';
+import resize from 'utils/resize-image';
+import RefModel from './ref.model';
 
 export default {
   async findOne({ email }): Promise<IUser> {
@@ -41,6 +43,14 @@ export default {
     };
     return await user.save();
   },
+  async resizeImageCert(user: IUser) {
+    await [
+      resize(user.image.selfie),
+      resize(user.image.frontIdentityCard),
+      resize(user.image.backIdentityCard)
+    ];
+  },
+
   async findUnapprovedCerts(): Promise<IUser[]> {
     return await UserModel.find({ state: State.pending });
   },
@@ -71,5 +81,17 @@ export default {
   },
   async findByEmailToken({ emailToken }) {
     return await UserModel.findOne({ emailToken });
+  },
+  async findAndAssignRef(ref, userRef) {
+    const user = await UserModel.findOne({ ref });
+    if (user) {
+      const ref = await RefModel.findOne({ userId: user._id });
+      if (ref) ref.update({ $addToSet: { userRef } });
+      else await new RefModel({ userId: user._id, userRef: [userRef] });
+    }
+  },
+  async findRefed(ref) {
+    const user = await UserModel.findOne({ ref });
+    return user;
   }
 };

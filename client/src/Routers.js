@@ -18,6 +18,9 @@ import SidebarAdmin from './components/Admin/SidebarAdmin';
 import PostBoard from './components/Admin/PostBoard';
 import CertBoard from './components/Admin/CertBoard';
 import PostDetail from './components/post/PostDetail';
+import MyRef from './components/User/MyRef';
+import UserSideBar from './components/User/UserSideBar';
+import MyInfo from './components/User/MyInfo';
 
 export default () => (
   <Router>
@@ -32,15 +35,20 @@ export default () => (
               path='/add-certificate'
               component={UploadCertForm}
             />
-            <PrivateRoute exact path='/my-certificate' component={MyCert} />
-            <PrivateRoute exact path='/my-post' component={MyPost} />
             <PrivateRoute exact path='/add-post' component={PostVideoForm} />
             <PrivateRoute path='/admin' component={SidebarAdmin} />
+            <PrivateRoute path='/user' component={UserSideBar} />
             <Route exact path='/posts/:id' component={PostDetail} />
           </Switch>
           <Switch>
             <PrivateRoute exact path='/admin/posts' component={PostBoard} />
             <PrivateRoute exact path='/admin/certs' component={CertBoard} />
+          </Switch>
+          <Switch>
+            <PrivateRoute exact path='/user/info' component={MyInfo} />
+            <PrivateRoute exact path='/user/certs' component={MyCert} />
+            <PrivateRoute exact path='/user/posts' component={MyPost} />
+            <PrivateRoute exact path='/user/refs' component={MyRef} />
           </Switch>
         </div>
       </div>

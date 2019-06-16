@@ -26,10 +26,10 @@ class UserBar extends Component {
             </Link>
           )}
           <div className='btn-group'>
-            <button className='btn btn-secondary btn-sm' type='button'>
+            <Link className='btn btn-secondary btn-sm' role='button' to='/user'>
               <img src={picture} height='32px' />
               {` ${user.firstName} ${user.lastName}`}
-            </button>
+            </Link>
             <button
               type='button'
               className='btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split'
@@ -40,12 +40,6 @@ class UserBar extends Component {
               <span className='sr-only'>Toggle Dropdown</span>
             </button>
             <div className='dropdown-menu'>
-              <Link to='/my-certificate' className='dropdown-item'>
-                My certifacte
-              </Link>
-              <Link to='/my-post' className='dropdown-item'>
-                My post
-              </Link>
               <Link
                 to='/'
                 className='dropdown-item'

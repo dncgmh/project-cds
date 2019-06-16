@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-
+import { ObjectId } from 'mongodb';
 enum Gender {
   male,
   female
@@ -23,6 +23,11 @@ export interface ImageKyc {
   backIdentityCard: string;
 }
 
+export interface IRefDocument extends Document {
+  userId: ObjectId;
+  userRef: ObjectId[];
+}
+
 export enum State {
   approved = 'approved',
   pending = 'pending',
@@ -43,4 +48,5 @@ export interface IUserDocument extends Document {
   facebook?: Facebook;
   image: ImageKyc;
   state: State;
+  ref: string;
 }

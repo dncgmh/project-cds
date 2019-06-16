@@ -8,6 +8,10 @@ export enum Genre {
   'film'
 }
 
+export interface ILikeDocument extends Document {
+  readonly userId: ObjectId;
+}
+
 export interface IPostDocument extends Document {
   readonly userId: ObjectId;
   readonly link: string;
@@ -16,4 +20,5 @@ export interface IPostDocument extends Document {
   readonly description: string;
   picture?: string;
   state: State;
+  likeBy: ObjectId[];
 }

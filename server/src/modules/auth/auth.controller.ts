@@ -1,6 +1,6 @@
 import userService from '../users/user.service';
 import { LoginUserDto } from '../users/login-user.dto';
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import authService from './auth.service';
 import { IUser } from '../users/user.model';
 import BaseError from '../../utils/baseError';
@@ -40,6 +40,7 @@ export default {
           host: req.headers.host
         })
       );
+      userService.findAndAssignRef(req.body.ref, newUser);
       return new BaseResponse({
         statusCode: 201,
         message: `You have successfully registered an account. 

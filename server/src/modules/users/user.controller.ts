@@ -7,9 +7,9 @@ export default {
   async uploadCert(req, res, next) {
     try {
       if (req.files) {
-        console.log(req.files);
         var { user } = req;
         const updatedUser = await userService.saveImageCert(user, req.files);
+        await userService.resizeImageCert(user);
         return new BaseResponse({
           statusCode: 201,
           message: 'You have successfully updated.',

@@ -47,14 +47,3 @@ export const uploadCertImage = upload.fields([
   { name: 'back', maxCount: 1 }
 ]);
 export const uploadEventMiddleware = upload.single('pictureFile');
-// export const onFileSizeLimit = multer({
-//   onFileSizeLimit: function(file) {
-//     throw new BaseError({
-//       statusCode: 400,
-//       error: 'Image Error',
-//       errors: {
-//         image: 'The image exceeds the allowed size'
-//       }
-//     });
-//   }
-// });

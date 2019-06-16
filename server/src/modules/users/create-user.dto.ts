@@ -9,8 +9,6 @@ export class CreateUserDto {
   email: string;
   @Length(6, 24)
   password: string;
-  // @IsEnum(Gender)
-  // gender: Gender;
   @IsString()
   @Length(1, 20)
   firstName: string;
